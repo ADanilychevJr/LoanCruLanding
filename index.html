@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="icon" type="image/png" href="img/logo01.png">
+<link rel="icon" type="image/png" href="img/logo2.png">
 <head>
 
     <meta charset="utf-8">
@@ -94,7 +94,7 @@
                         
                         <ul class="list-inline intro-social-buttons" id="introbuttons">
                             <li>
-                                <button type="button" id="quote_button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#quote-modal">Instant Quote</button>
+                                <button type="button" id="quote_button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#quote-modal">Instant Quote</button>
                             </li> <!-- This is the quote modal button-->
                             <!--
                             <li>
@@ -140,9 +140,12 @@
     <script> 
         $(document).ready(function(){ 
             $("#testing2").hide();
+            var lst = universityParse();
+            console.log(lst);
             $("#quote-submit-button").click(function() {
                 //$("#testing").show();
                 var rate = calcRate($("#credit-score").val());
+
                 $("#quote_button").hide();
                 $("#introbuttons").hide();
                 $("#testing2").text(rate);
@@ -168,7 +171,26 @@
                 return rateString + "2.5%";
             }
         }
-        ;
+        function universityParse(){
+            var pageExecute = {
+
+            fileContents:"Null",
+            pagePrefix:"Null",
+            slides:"Null",
+
+            init: function () {
+                $.ajax({
+                    url: "./uni-list.txt",
+                    async: false,
+                    success: function (data){
+                        pageExecute.fileContents = data;
+                    }
+                });
+            }
+        };
+        return pageExecute.fileContents;
+        }
+
 
     </script>
 <!-- Large modal -->
@@ -186,18 +208,65 @@
                             <br>
                             <form class="form-horizontal" id="quote_form">
                                 <div class="form-group">
-                                    <label for="CreditScore" class="col-sm-2 control-label">Credit Score</label>
+                                    <label for="Name" class="col-sm-2 control-label">Name:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="name-input" placeholder="Enter Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="CreditScore" class="col-sm-2 control-label">Credit Score:</label>
                                     <div class="col-sm-10">
                                         <input type="number" class="form-control" id="credit-score" placeholder="Enter Credit Score">
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">University</label>
+                                    <div class="col-sm-10 selectContainer">
+                                        <select name="language" class="form-control placeholder" >
+                                            <option value="" disabled selected>Pick Your School</option>
+                                            <option value="arabic">UC Berkeley</option>
+                                            <option value="english">UCLA</option>
+                                            <option value="french">UC Davis</option>
+                                            <option value="german">UC Santa Barbara</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!--<div class="form-group">
+                                    <label for="University" class="col-sm-2 control-label">University:</label>
+                                    <div class="form-group col-sm-10">
+                                        <select class="form-control">
+                                            <option>1</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+                                <!--
+                                <div class="form-group">
+                                    <label for="University" class="col-sm-2 control-label">University:</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="college-input" placeholder="Enter University">
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <label for="Age" class="col-sm-2 control-label">Age:</label>
+                                    <div class="col-sm-4">
+                                        <input type="number" class="form-control" id="age-input" placeholder="Age">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="State" class="col-sm-2 control-label">State:</label>
+                                    <div class="col-sm-4">
+                                        <input type="text" class="form-control" id="state_input" placeholder="State">
+                                    </div>
+                                </div>
+                            
                     </div>
                     <!--</div>-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="quote-submit-button">Submit</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="quote-submit-button">Submit</button>
                     </div>
-                </div>
+                </div> <!-- End of fluid container-->
             </div>
             </div> <!--End Modal -->
     <!-- Page Content -->
@@ -214,7 +283,7 @@
                     <p class="lead">Money shouldn't hold your higher education goals back. Fund your future with our competitive and affordable interest rates. Rates start as low as 2.75%</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/students2.jpg" alt="">
+                    <img class="img-responsive" src="img/bolt.png" alt="">
                 </div>
             </div>
 
@@ -236,7 +305,7 @@
                     <p class="lead">Credit unions are not for profit institutions that serve 40% of consumers on a local and personal level. Let us find the right one that fits your need and price point.</p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/debt-2.jpg" alt="">
+                    <img class="img-responsive" src="img/chain.png" alt="">
                 </div>
             </div>
 
@@ -258,7 +327,7 @@
                     <p class="lead">Whether you are just starting school or looking to refinance, LoanCru is the easy and fast solution for you. Input your information now to receive an instant rate.</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/grad3.jpg" alt="">
+                    <img class="img-responsive" src="img/cap.png" alt="">
                 </div>
             </div>
 

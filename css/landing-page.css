@@ -69,9 +69,13 @@ img {
     color:#ffffff;
 }
 
-#quote_button {
+#quote_button {/*Added*/
         
     }
+
+.placeholder{ /*Added*/
+    color:gray;
+}
 
 #modal-body { /*Alex*/
     font-size: 2em;
