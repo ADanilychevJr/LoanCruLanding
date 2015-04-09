@@ -39,7 +39,8 @@
     <![endif]-->
 
 </head>
-
+<!-- jQuery -->
+    <script src="js/jquery.js"></script>
 <body>
 
     <!-- Navigation -->
@@ -86,11 +87,12 @@
                     <div class="intro-message">
 
                         <h1>LoanCru</h1>
-                        <h3>A Financial Platform Developed by Students, for Students</h3>
+                        <h3 id="testing">A Financial Platform Developed by Students, for Students</h3>
+                        
                         <hr class="intro-divider">
 
                         
-                        <ul class="list-inline intro-social-buttons">
+                        <ul class="list-inline intro-social-buttons" id="introbuttons">
                             <li>
                                 <button type="button" id="quote_button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#quote-modal">Instant Quote</button>
                             </li> <!-- This is the quote modal button-->
@@ -111,7 +113,7 @@
         <!--Start mailchimp embed-->
         <!-- Large modal -->
             
-        
+        <h3 id="testing2">Another random header</h3>
             <form action="//loancru.us10.list-manage.com/subscribe/post?u=211065a925692b50b72800a2a&amp;id=922a103aca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-inline" target="_blank" novalidate>
                 <div id="form-group">
     
@@ -135,6 +137,40 @@
 
     </div>
     <!-- /.intro-header -->
+    <script> 
+        $(document).ready(function(){ 
+            $("#testing2").hide();
+            $("#quote-submit-button").click(function() {
+                //$("#testing").show();
+                var rate = calcRate($("#credit-score").val());
+                $("#quote_button").hide();
+                $("#introbuttons").hide();
+                $("#testing2").text(rate);
+                $("#testing2").toggle(500);
+            });
+
+            //document.write("<h1> asdfasdf</h1>");
+            /*
+            $("#quote-form");
+            $("#testing");*/
+        })
+        function calcRate(txt){
+            var score = parseInt(txt);
+            console.log(score);
+            var rateString = "Your rate can be as low as "
+            if (score < 550){
+                return "Your rate could be 4.0%+, please subscribe for more info";
+            }else if (score < 600){
+                return rateString + "3.5%";
+            }else if (score < 650){
+                return rateString + "2.75%";
+            }else {
+                return rateString + "2.5%";
+            }
+        }
+        ;
+
+    </script>
 <!-- Large modal -->
             
 
@@ -148,7 +184,7 @@
                     <!--<div class="modal-body" id="modal-body">-->
                     <div class="container-fluid">
                             <br>
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" id="quote_form">
                                 <div class="form-group">
                                     <label for="CreditScore" class="col-sm-2 control-label">Credit Score</label>
                                     <div class="col-sm-10">
@@ -159,7 +195,7 @@
                     <!--</div>-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" id="quote-submit-button">Submit</button>
                     </div>
                 </div>
             </div>
@@ -293,8 +329,7 @@
         </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
