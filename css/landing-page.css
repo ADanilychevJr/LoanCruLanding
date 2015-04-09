@@ -30,7 +30,7 @@ h6 {
     font-weight: 400;
 }
 
-img {
+img { /*added*/
     border-radius: 5%;
 }
 
@@ -39,7 +39,7 @@ img {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/dartmouth-college-campus.jpg) no-repeat center center;
+    background: url(../img/sather.png) no-repeat center center;
     background-size: cover;
 }
 /*This deals with aligning the Loancru and buttons, and the image behind*/
