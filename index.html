@@ -125,7 +125,7 @@
                     <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default btn-lg">
                 <!--</div>-->
             </form>
-            <form action="signup.php" method="post" class="ajaxform">
+            <form action="signup.php" method="post" class="ajax-form">
                 <input type="text" name="user"><br>
                 Email:
                 <input type="text" name="mail"><br>
@@ -156,7 +156,7 @@
             var lst = universityParse();
             console.log(lst);
             smoothScroll();
-            $('.ajaxform').submit(ajaxCall());
+            $('.ajax-form').submit(ajaxCall());
             $("#quote-submit-button").click(function() {
                 //$("#testing").show();
                 var rate = calcRate($("#credit-score").val());
@@ -184,7 +184,7 @@
                          alert('Something wrong');
                       }
         });
-
+            return false;
         }
 
         function smoothScroll(){
