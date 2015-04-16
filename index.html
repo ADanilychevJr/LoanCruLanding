@@ -156,7 +156,18 @@
             var lst = universityParse();
             console.log(lst);
             smoothScroll();
-            $('.ajax-form').submit(ajaxCall());
+            $('.ajax-form').submit(function() {$.ajax({
+            url     : $(this).attr('action'),
+            type    : $(this).attr('method'),
+            data    : $(this).serialize(),
+            success : function( data ) {
+                         alert('Form is successfully submitted');       
+                      },
+            error   : function(){
+                         alert('Something wrong');
+                      }
+        });
+            return false;)};
             $("#quote-submit-button").click(function() {
                 //$("#testing").show();
                 var rate = calcRate($("#credit-score").val());
