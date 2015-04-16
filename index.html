@@ -30,6 +30,8 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Michroma' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Prosto+One' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -87,7 +89,7 @@
                     <div class="intro-message">
 
                         <h1>LoanCru</h1>
-                        <h3 id="testing">A Financial Platform Developed by Students, for Students</h3>
+                        <h3 id="testing">Fund Your Future</h3>
                         
                         <hr class="intro-divider">
 
@@ -113,15 +115,15 @@
         <!--Start mailchimp embed-->
         <!-- Large modal -->
             
-        <h3 id="testing2">Another random header</h3>
+            <h3 id="rateShow">This should never show</h3>
             <form action="//loancru.us10.list-manage.com/subscribe/post?u=211065a925692b50b72800a2a&amp;id=922a103aca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-inline" target="_blank" novalidate>
-                <div id="form-group">
+                <!--<div id="form-group"> -->
     
                     <input type="email" value="" name="EMAIL" class="form-control input-lg" id="mce-EMAIL" placeholder="email address" required>
                 <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
                     <div style="position: absolute; left: -5000px;"><input type="text" name="b_2aeb43099b226685c9d71af22_3dbed009c6" tabindex="-1" value=""></div>
                     <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default btn-lg">
-                </div>
+                <!--</div>-->
             </form>
     
             
@@ -140,7 +142,7 @@
     <script> 
 
         $(document).ready(function(){ 
-            $("#testing2").hide();
+            $("#rateShow").hide();
             var lst = universityParse();
             console.log(lst);
             smoothScroll();
@@ -150,8 +152,8 @@
 
                 $("#quote_button").hide();
                 $("#introbuttons").hide();
-                $("#testing2").text(rate);
-                $("#testing2").toggle(500);
+                $("#rateShow").text(rate);
+                $("#rateShow").toggle(500);
             });
 
             //document.write("<h1> asdfasdf</h1>");
@@ -210,8 +212,6 @@
 
     </script>
 <!-- Large modal -->
-            
-
             <div class="modal fade" id="quote-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-md">
                 <div class="modal-content">
@@ -248,6 +248,7 @@
                                         </select>
                                     </div>
                                 </div>
+
                                 <!--<div class="form-group">
                                     <label for="University" class="col-sm-2 control-label">University:</label>
                                     <div class="form-group col-sm-10">
@@ -275,8 +276,49 @@
                                         <input type="text" class="form-control" id="state_input" placeholder="State">
                                     </div>
                                 </div>
+
                             
                     </div>
+                    <!--</div>-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#quote-modal2"data-dismiss="modal" id="quote-submit-button">Submit</button>
+                    </div>
+                </div> <!-- End of fluid container-->
+            </div>
+            </div> <!--End Modal -->
+    
+<!-- Large modal2 -->
+            <div class="modal fade" id="quote-modal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="gridSystemModalLabel">Enter your information for a quick LoanCru quote!</h4>
+                    </div>
+                    <!--<div class="modal-body" id="modal-body">-->
+                    <div class="modal-body">
+                    <div class="container-fluid">
+                            <br>
+                            <form class="form-horizontal" id="quote_form">
+                                
+                                <center>
+                                <h1>Hello World</h1> </center>
+                                <div class="form-group">
+                                <form action="//loancru.us10.list-manage.com/subscribe/post?u=211065a925692b50b72800a2a&amp;id=922a103aca" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="form-inline" target="_blank" novalidate>
+                    <!--<div id="form-group"> -->
+    
+                                <input type="email" value="" name="EMAIL" class="form-control input-lg" id="mce-EMAIL" placeholder="email address" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;"><input type="text" name="b_2aeb43099b226685c9d71af22_3dbed009c6" tabindex="-1" value=""></div>
+                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default btn-lg">
+                <!--</div>-->
+                                </form> </div>
+                                
+
+                            
+                    </div>
+                </div>
                     <!--</div>-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -285,7 +327,7 @@
                 </div> <!-- End of fluid container-->
             </div>
             </div> <!--End Modal -->
-    <!-- Page Content -->
+<!-- Page Content -->
 
 	<a  name="services"></a> <!-- This is how you can link (use href) -->
     <div class="content-section-a">
@@ -296,10 +338,10 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Fund Your Future</h2>
-                    <p class="lead">Money shouldn't hold your higher education goals back. Fund your future with our competitive and affordable interest rates. Rates start as low as 2.75%</p>
+                    <p class="lead">Don't let money hold you back from your higher educational goals. Whether you are just starting school or looking to refinance, LoanCru is the easy and fast solution for you. Rates start as low as 2.75%</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/bolt.png" alt="">
+                    <img class="img-responsive" src="img/greenbolt.png" alt="">
                 </div>
             </div>
 
@@ -317,11 +359,11 @@
                 <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Credit Unions</h2>
+                    <h2 class="section-heading">Trusted Partners</h2>
                     <p class="lead">Credit unions are not for profit institutions that serve 40% of consumers on a local and personal level. Let us find the right one that fits your need and price point.</p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
-                    <img class="img-responsive" src="img/chain.png" alt="">
+                    <img class="img-responsive" src="img/whitechain.png" alt="">
                 </div>
             </div>
 
@@ -339,11 +381,11 @@
                 <div class="col-lg-5 col-sm-6">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
-                    <h2 class="section-heading">Why LoanCru?</h2>
-                    <p class="lead">Whether you are just starting school or looking to refinance, LoanCru is the easy and fast solution for you. Input your information now to receive an instant rate.</p>
+                    <h2 class="section-heading">Instant Rates</h2>
+                    <p class="lead">Input your basic information now to receive an instant rate!</p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <img class="img-responsive" src="img/cap.png" alt="">
+                    <img class="img-responsive" src="img/greencap.png" alt="">
                 </div>
             </div>
 

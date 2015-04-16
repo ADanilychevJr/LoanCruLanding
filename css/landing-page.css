@@ -17,7 +17,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    /*font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;*/
+    font-family: "Prosto One","Michroma","Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -39,8 +40,9 @@ img { /*added*/
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: url(../img/sather.png) no-repeat center center;
+    background: url(../img/sather-bright.jpg) no-repeat center center;
     background-size: cover;
+    /*background-attachment: fixed;*/
 }
 /*This deals with aligning the Loancru and buttons, and the image behind*/
 
@@ -85,7 +87,10 @@ img { /*added*/
     background-color:#9ADD90;
 }
 
-
+.img-responsive {
+    width:300px;
+    height:300px;
+}
 
 @media(max-width:767px) {
     .intro-message {
@@ -134,9 +139,17 @@ img { /*added*/
 
 .content-section-a {
     padding: 50px 0;
-    background-color: rgba(38,167,224,.61);/*#f8f8f8; Changed */
+    /*background-color: rgba(38,167,224,.61);/*#f8f8f8; Changed */
     color:white;
-    text-shadow: 2px 2px 3px rgba(0,0,0,.6); /*Added*/
+    /*text-shadow: 2px 2px 3px rgba(0,0,0,.6); /*Added*/
+}
+
+.content-section-a  p {
+    color:black;
+}
+
+.content-section-a h2 {
+    color: #9ADD90;
 }
 
 .content-section-b {
@@ -145,7 +158,11 @@ img { /*added*/
     border-bottom: 1px solid #e7e7e7;*/
     background-color: #9ADD90; /*Added*/
     color:white;
-    text-shadow: 2px 2px 3px rgba(0,0,0,.6); /*Added*/
+    /*text-shadow: 2px 2px 3px rgba(0,0,0,.6); /*Added*/
+}
+
+.content-section-b h2 {
+    color: black;
 }
 
 .section-heading {
