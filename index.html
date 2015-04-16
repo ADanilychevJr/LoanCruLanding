@@ -125,14 +125,15 @@
                     <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn btn-default btn-lg">
                 <!--</div>-->
             </form>
-            <form action="signup.php" method="post" class="ajax-form">
+            <!--
+            <form action="signup.php" method="post" id="aj-form">
                 <input type="text" name="user"><br>
                 Email:
                 <input type="text" name="mail"><br>
                 Experience:
                 <input type="text" name="exp"><br>
                 <input type="submit" name="Submit" value="Sign Up">
-            </form>
+            </form> This was an email submit without using mailchimp (Need to hammer out the ajax call)-->
 
             <!--<form name="form1" method="post" action="signup.php"> Username: <input type="text" name="user"><br>Email: <input type="text" name="mail"><br>Experience: <select name="exp"> <option value="beginner">Beginner</option> <option value="intermediate">Intermediate</option> <option value="advanced">Advanced</option> </select><br> <input type="submit" name="Submit" value="Sign Up"> </form> -->
     
@@ -153,51 +154,27 @@
 
         $(document).ready(function(){ 
             $("#rateShow").hide();
+            $("#mc-embedded-subscribe-form").hide();
             var lst = universityParse();
             console.log(lst);
             smoothScroll();
-            $('.ajax-form').submit(function() {$.ajax({
-            url     : $(this).attr('action'),
-            type    : $(this).attr('method'),
-            data    : $(this).serialize(),
-            success : function( data ) {
-                         alert('Form is successfully submitted');       
-                      },
-            error   : function(){
-                         alert('Something wrong');
-                      }
-        });
-            return false;)};
             $("#quote-submit-button").click(function() {
                 //$("#testing").show();
-                var rate = calcRate($("#credit-score").val());
-
+                //var rate = calcRate($("#credit-score").val());
+                $("#mc-embedded-subscribe-form").toggle();
                 $("#quote_button").hide();
                 $("#introbuttons").hide();
-                $("#rateShow").text(rate);
+                $("#rateShow").text("Please subscribe to see your potential interest rate!");
                 $("#rateShow").toggle(500);
             });
-
-            //document.write("<h1> asdfasdf</h1>");
-            /*
-            $("#quote-form");
-            $("#testing");*/
+            $("#mc-embedded-subscribe").click(function(){
+                var rate = calcRate($("#credit-score").val());
+                $("#rateShow").text(rate);
+                //$("#rateShow").toggle();
+                //$("#rateShow").toggle(500);
+            });
+            
         })
-        function ajaxCall(){
-            $.ajax({
-            url     : $(this).attr('action'),
-            type    : $(this).attr('method'),
-            data    : $(this).serialize(),
-            success : function( data ) {
-                         alert('Form is successfully submitted');       
-                      },
-            error   : function(){
-                         alert('Something wrong');
-                      }
-        });
-            return false;
-        }
-
         function smoothScroll(){
             $('a[href*=#]:not([href=#])').click(function() {
                 if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
@@ -303,14 +280,20 @@
                                 </div> -->
                                 <div class="form-group">
                                     <label for="Age" class="col-sm-2 control-label">Age:</label>
-                                    <div class="col-sm-4">
+                                    <div class="col-sm-10">
                                         <input type="number" class="form-control" id="age-input" placeholder="Age">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="State" class="col-sm-2 control-label">State:</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" id="state_input" placeholder="State">
+                                    <label for="Borrow-Amt" class="col-sm-6 control-label">Amount looking to borrow or refinance:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="state_input" placeholder="$00,0000">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Curr-Rate" class="col-sm-6 control-label">Current Interest Rate</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" id="state_input" placeholder="0.0%">
                                     </div>
                                 </div>
 
@@ -319,7 +302,7 @@
                     <!--</div>-->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#quote-modal2"data-dismiss="modal" id="quote-submit-button">Submit</button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal" id="quote-submit-button">Submit</button>
                     </div>
                 </div> <!-- End of fluid container-->
             </div>
